@@ -5,9 +5,13 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const db = require("./config/mongoose-connection")
 
+
+require("dotenv").config();
+
 const ownerRouter = require("./routes/ownerRouter")
 const usersRouter = require("./routes/usersRouter")
 const productsRouter = require("./routes/productsRouter")
+const indexRouter = require("./routes/index")
 
 
 app.use(express.json());
@@ -22,6 +26,7 @@ app.set("view engine", "ejs");
 app.use("/owners", ownerRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/", indexRouter )
 
 
 

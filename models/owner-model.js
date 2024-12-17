@@ -15,12 +15,12 @@ const ownerSchema = mongoose.Schema({
     },
     email: String,
     
-    
+    password: String,
     products: {
         type: Array,
         default: []
     },
-    contact: Number,
+   
     image: String,
     gst: String,
 
